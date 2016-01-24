@@ -1,3 +1,7 @@
+/**
+* JSON object for bio data
+* Note: functions will not validate in JSONLint
+*/
 var bio = {
 	'name': 'BATMAN',
 	'role': 'Dark Knight',
@@ -9,7 +13,7 @@ var bio = {
 	},
 	'welcomeMessage' : 'Tell me. Do you bleed? ... You will!      <br>P.S. Supergirl, call me!',
 	'skills': ['Theatricality', 'Deception', 'Martial Arts', 'Forensics', 'Growly Voice'],
-	'bioPic' : 'https://s-media-cache-ak0.pinimg.com/236x/42/b2/c0/42b2c095545c4addc157268dd7a2f08c.jpg',
+	'bioPic' : 'images/darkKnightPoster.jpg',
 	'display' : function(){
 		var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
 		$('#header').prepend(formattedRole);
@@ -41,6 +45,10 @@ var bio = {
 	}
 }
 
+/**
+* JSON object for education data
+* Note: functions will not validate in JSONLint
+*/
 var education = {
 	'schools' : [
 		{ 'name' : 'Old Dominion University',
@@ -94,6 +102,10 @@ var education = {
 	}
 }
 
+/**
+* JSON object for work data
+* Note: functions will not validate in JSONLint
+*/
 var work = {
 	'jobs': [{
 			'employer': 'The Justice League',
@@ -128,15 +140,19 @@ var work = {
 	}
 }
 
+/**
+* JSON object for projects data
+* Note: functions will not validate in JSONLint
+*/
 var projects = {
 	'projects': [{
 			'title': 'More Stuff To Throw',
 			'dates': '2010 - Present',
 			'description': 'More stuff to throw at bad guys.',
 			'images': [{
-				'url': 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT3PTokc4WdzvxQrAPWe7yDULvj6WP9Ul66QhdQf9SMIBAZ9k_HGg'
+				'url': 'images/batarang.jpeg'
 			}, {
-				'url': 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTIfi7EKcXz2_lYh8GxhXQIRL6m1cOLCXA3v15arO7pLNz9K5Mr3Q'
+				'url': 'images/batarang.jpeg'
 			}]
 		},
 
@@ -145,7 +161,7 @@ var projects = {
 			'dates': '2007 - 2008',
 			'description': 'The Sonic Batarang sent out a high-pitched wailing sound.',
 			'images': [{
-				'url': 'http://vignette3.wikia.nocookie.net/arkhamcity/images/b/b9/Sonic_Batarang.jpg/revision/latest?cb=20120122152614'
+				'url': 'images/sonicBatarang.jpg'
 			}]
 		}
 	],
@@ -166,9 +182,11 @@ var projects = {
 	}
 }
 
+// Insert data into the html template
 bio.display();
 education.display();
 work.display();
 projects.display();
 
+// Add a google map
 $('#mapDiv').append(googleMap);
