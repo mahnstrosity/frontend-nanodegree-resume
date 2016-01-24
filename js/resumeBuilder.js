@@ -3,8 +3,8 @@
 * Note: functions will not validate in JSONLint
 */
 var bio = {
-	'name': 'BATMAN',
-	'role': 'Dark Knight',
+	'name': 'Bruce WAYNE',
+	'role': 'Batman',
 	'contacts' : {
 		'mobile' : 'bat',
 		'email' : 'bwayne@wayneindustries.com',
