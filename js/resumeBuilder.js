@@ -1,173 +1,174 @@
-// var awesomeThoughts = "I am Mahnstrostiy and I am AWESOME!";
-// var funThoughts = awesomeThoughts.replace("AWESOME", "FUN");
-// // console.log(funThoughts);
-// // $("#main").append(funThoughts);
-
-// var name = "Mark S. Mahn";
- // var role = "Mahnstrosity";
-// var formattedName = HTMLheaderName.replace("%data%", name);
-// var formattedRole = HTMLheaderRole.replace("%data%", role);
-// var skills = ["AngularJS, JavaScript, JQuery, HTML, CSS, Java, C++"];
-// $("#header").prepend(formattedRole);
-// $("#header").prepend(formattedName);
-
-var work = {
-
-	"jobs": [{
-			"employer": "aXseum Solutions",
-			"title": "Senior Software Engineer",
-			"location": "Fort Eustis, VA",
-			"dates": "2014 - Present",
-			"description": "working on CAR/TAG"
-		},
-
-		{
-			"employer": "Zantech",
-			"title": "Software Programmer",
-			"location": "Fort Eustis, VA",
-			"dates": "2011 - 2014",
-			"description": "working on TDC/CAR/TAG"
-		}
-	]
-}
-
-var projects = {
-	"projects": [{
-			"title": "Speech Simulator",
-			"dates": "2010 - Present",
-			"description": "TBA",
-			"images": [{
-				"url": "http://www.cs.odu.edu/~cpi/old/cpi-s2008/isa/palmtop2g.jpg"
-			}, {
-				"url": "http://www.cs.odu.edu/~cpi/old/cpi-s2008/isa/KC200PEN2.png"
-			}]
-		},
-
-		{
-			"title": "iSa",
-			"dates": "2007 - 2008",
-			"description": "iTouch Speech Assistant",
-			"images": [{
-				"url": "http://www.cs.odu.edu/~cpi/old/cpi-s2008/isa/10003200.jpg"
-			}, {
-				"url": "http://vignette2.wikia.nocookie.net/callofduty/images/0/07/Ray_Gun_side_view_BOII.png/revision/latest?cb=20121118055921"
-			}]
-		}
-	]
-}
-
 var bio = {
-	"name": "Mark S. Mahn",
-	"role": "Mahnstrosity",
+	"name": "BATMAN",
+	"role": "Dark Knight",
 	"contacts" : {
-		"mobile" : "(757)298-6899",
-		"email" : "markmahn@gmail.com",
-		"github" : "mahnstrosity",
-		"twitter" : "n/a",
-		"location" : "Newport News, VA"
+		"mobile" : "bat",
+		"email" : "bwayne@wayneindustries.com",
+		"signal" : "bat",
+		"location" : "Gotham"
 	},
-	
-	"welcomeMessage" : "Welcome to Hell",
-	"skills": ["AngularJS", "JavaScript", "JQuery", "HTML", "CSS", "Java", "C++"],
-	"bioPic" : "http://www.cs.odu.edu/~cpi/old/cpi-s2008/isa/mahn.jpg"
-}
-
-
-var education = {
-	"college" : "Old Dominion Universtiy",
-	"years" : "2007 - 2008"
+	"welcomeMessage" : "Tell me. Do you bleed? ... You will!      <br>P.S. Supergirl, call me!",
+	"skills": ["Theatricality", "Deception", "Martial Arts", "Forensics", "Growly Voice"],
+	"bioPic" : "https://s-media-cache-ak0.pinimg.com/236x/42/b2/c0/42b2c095545c4addc157268dd7a2f08c.jpg",
+	"display" : function(){
+		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+		$("#header").prepend(formattedRole);
+		var formattedName = HTMLheaderName.replace("%data%", bio.name);
+		$("#header").prepend(formattedName);
+		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+		$("#topContacts").append(formattedMobile);
+		$("#footerContacts").append(formattedMobile);
+		var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+		$("#topContacts").append(formattedEmail);
+		$("#footerContacts").append(formattedEmail);
+		var formattedSignal = HTMLsignal.replace("%data%", bio.contacts.signal);
+		$("#topContacts").append(formattedSignal);
+		$("#footerContacts").append(formattedSignal);
+		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+		$("#topContacts").append(formattedLocation);
+		$("#footerContacts").append(formattedLocation);
+		var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
+		$("#header").append(formattedPic);
+		var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+		$("#header").append(formattedWelcomeMsg);		
+		if(bio.skills.length > 0){
+			$("#header").append(HTMLskillsStart);
+			for(skill in bio.skills){	
+				var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+				$("#skills").append(formattedSkill);
+			}
+		}
+	}
 }
 
 var education = {
 	"schools" : [
 		{ "name" : "Old Dominion University",
 		"location" : "Norfolk, VA",
-		"degree" : "BSCS",
-		"major" : "Software Engineering",
+		"degree" : "Bachelors",
+		"major" : "Computer Science",
 		"dates" : "2007 - 2008",
 		"url" : "http://www.odu.edu"},
 		{ "name" : "Christopher Newport University",
 		"location" : "Newport News, VA",
-		"degree" : "BSGS",
+		"degree" : "Bachelors",
 		"major" : "Legal Studies",
 		"dates" : "1990 - 1994",
 		"url" : "http://www.cnu.edu"}
-	]
-}
-
-if(bio.skills.length > 0){
-	console.log("there are some skills");
-	$("#header").append(HTMLskillsStart);
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[5]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[6]);
-	$("#skills").append(formattedSkill);
-}else{
-	console.log("there are NO skills");
-}
-
-function displayWork(){
-	for(job in work.jobs){
-		$("#workExperience").append(HTMLworkStart);
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		var formattedEmployerTitle = formattedEmployer + formattedTitle;
-		$(".work-entry:last").append(formattedEmployerTitle);
-		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-		$(".work-entry:last").append(formattedLocation);
-		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		$(".work-entry:last").append(formattedDates);
-		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-		$(".work-entry:last").append(formattedDescription);
-	}
-}
-
-function inName(name){
-	var tempName = name.trim().split(" ");
-	console.log(name);
-	tempName[1] = tempName[1].toUpperCase();
-	tempName[0] = tempName[0].slice(0,1).toUpperCase() + tempName[0].slice(1).toLowerCase();
-	return tempName[0] + " " + tempName[1];
-}
-
-displayWork();
-
-projects.display = function(){
-	console.log("this is the display function");
-	$("#projects").append(HTMLprojectStart);
-	for(project in projects.projects){
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-		$(".project-entry:last").append(formattedTitle);
-		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-		$(".project-entry:last").append(formattedDates);
-		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-		$(".project-entry:last").append(formattedDescription);
-		for(image in projects.images){
-			var formattedImage = HTMLprojectImage.replace("%data%", projects.images[image].url);
-			$(".project-entry:last").append(formattedImage);
+	],
+	"onlineCourses" : [
+		{ "title" : "Front-End Web Developer Nanodegree",
+		"school" : "UDACITY",
+		"date" : "2016",
+		"url" : "http://www.udacity.com"
+		}
+	],
+	"display" : function(){
+		for(school in education.schools){
+			$("#education").append(HTMLschoolStart);
+			var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+			var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+			var formattedNameDegree = formattedName + formattedDegree;
+			$(".education-entry:last").append(formattedNameDegree);
+			var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+			$(".education-entry:last").append(formattedLocation);
+			var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+			$(".education-entry:last").append(formattedDates);
+			var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+			$(".education-entry:last").append(formattedMajor);
+		}
+		if(education.onlineCourses.length > 0){
+			$("#education").append(HTMLonlineClasses);
+		}
+		for(course in education.onlineCourses){
+			$("#education").append(HTMLschoolStart);
+			var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+			var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+			var formattedTitleSchool = formattedTitle + formattedSchool;
+			$(".education-entry:last").append(formattedTitleSchool);
+			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
+			$(".education-entry:last").append(formattedDates);
+			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+			$(".education-entry:last").append(formattedURL);
 		}
 	}
 }
+
+var work = {
+	"jobs": [{
+			"employer": "The Justice League",
+			"title": "Caped Crusader",
+			"location": "Metropolis",
+			"dates": "2014 - Present",
+			"description": "Jump between Superman and Kryptonite."
+		},
+
+		{
+			"employer": "Wayne Industries",
+			"title": "Dark Knight",
+			"location": "Gotham",
+			"dates": "2011 - 2014",
+			"description": "Constantly fight The Joker."
+		}
+	],
+	"display" : function(){
+		for(job in work.jobs){
+			$("#workExperience").append(HTMLworkStart);
+			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+			var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+			var formattedEmployerTitle = formattedEmployer + formattedTitle;
+			$(".work-entry:last").append(formattedEmployerTitle);
+			var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+			$(".work-entry:last").append(formattedLocation);
+			var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+			$(".work-entry:last").append(formattedDates);
+			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+			$(".work-entry:last").append(formattedDescription);
+		}
+	}
+}
+
+var projects = {
+	"projects": [{
+			"title": "More Stuff To Throw",
+			"dates": "2010 - Present",
+			"description": "More stuff to throw at bad guys.",
+			"images": [{
+				"url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT3PTokc4WdzvxQrAPWe7yDULvj6WP9Ul66QhdQf9SMIBAZ9k_HGg"
+			}, {
+				"url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTIfi7EKcXz2_lYh8GxhXQIRL6m1cOLCXA3v15arO7pLNz9K5Mr3Q"
+			}]
+		},
+
+		{
+			"title": "The Sonic Batarang",
+			"dates": "2007 - 2008",
+			"description": "The Sonic Batarang sent out a high-pitched wailing sound.",
+			"images": [{
+				"url": "http://vignette3.wikia.nocookie.net/arkhamcity/images/b/b9/Sonic_Batarang.jpg/revision/latest?cb=20120122152614"
+			}]
+		}
+	],
+	"display" : function(){
+		$("#projects").append(HTMLprojectStart);
+		for(project in projects.projects){
+			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+			$(".project-entry:last").append(formattedTitle);
+			var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+			$(".project-entry:last").append(formattedDates);
+			var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+			$(".project-entry:last").append(formattedDescription);
+			for(image in projects.projects[project].images){
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image].url);
+				$(".project-entry:last").append(formattedImage);
+			}
+		}
+	}
+}
+
+bio.display();
+education.display();
+work.display();
 projects.display();
 
-
-$("#main").append(internationalizeButton);
-
-// $("#main").append("Name: " + bio.name);
-// $("#main").append("<br>Role: " + bio.role);
-// $("#main").append("<br>Contact Info: " + bio.contacts.mobile);
-// $("#main").append("<br>Pic URL: " + bio.bioPic);
-// $("#main").append("<br>" + bio.welcomeMessage);
-// $("#main").append("<br>Skills: " + bio.skills);
-// $("#main").append("<br>Position: " + work.position);
-// $("#main").append("<br>College: " + education.college);
+$("#mapDiv").append(googleMap);
